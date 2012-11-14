@@ -1,4 +1,6 @@
 Gp::Application.routes.draw do
+  resources :posts
+
   resources :journals
 
   resources :users
