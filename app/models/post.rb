@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  mount_uploader :picture, PictureUploader
   attr_accessible :description, :journal_id, :picture
   
   belongs_to :post
