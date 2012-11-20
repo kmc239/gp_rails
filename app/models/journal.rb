@@ -6,4 +6,6 @@ class Journal < ActiveRecord::Base
   
   validates :gender, :length => { :maximum => 10 }
   validates :user_id, :presence => true
+  
+  self.include_root_in_json = true
 end

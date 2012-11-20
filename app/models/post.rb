@@ -6,4 +6,6 @@ class Post < ActiveRecord::Base
   
   validates :description, :length => { :maximum => 140 }
   validates :journal_id, :presence => true
+  
+  self.include_root_in_json = true
 end
