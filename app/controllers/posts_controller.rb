@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if (params[:journal_id] != nil)
+      @current_journal = Journal.find(params[:journal_id])
+      @posts = @current_journal.posts
+    else
+      @posts = Post.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,8 +2,14 @@ class JournalsController < ApplicationController
   # GET /journals
   # GET /journals.json
   def index
-    @journals = Journal.all
-
+    # if there is a user_id param, only return the journals for that user
+    if (params[:user_id] != nil)
+      @current_user = User.find(params[:user_id])
+      @journals = @current_user.journals
+    else 
+      @journals = Journal.all
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @journals }

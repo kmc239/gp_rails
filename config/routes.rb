@@ -3,14 +3,14 @@ Gp::Application.routes.draw do
   resources :journals
   resources :users
   
-  # resources :users do
-  #     resources :journals
-  #   end
-  #   
-  #   resources :journals do
-  #     resources :posts
-  #   end
-  
+  resources :users do
+    resources :journals
+  end
+          
+  resources :journals do
+      resources :posts
+  end
+    
   root :to => redirect('/users')
 
   # The priority is based upon order of creation:
