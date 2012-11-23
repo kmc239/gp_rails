@@ -20,5 +20,7 @@ class Post < ActiveRecord::Base
   validates :description, :length => { :maximum => 140 }
   validates :journal_id, :presence => true
   
-  self.include_root_in_json = true
+  # Do not include root in json for each individual post
+  # We will wrap all posts in a post array in the controller
+  self.include_root_in_json = false
 end

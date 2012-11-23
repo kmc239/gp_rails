@@ -14,5 +14,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :journals
   
+  # Include root in json for each individual user.
+  # We know users will only be fetched individually, 
+  # so this will not affect any getUsers calls
   self.include_root_in_json = true
 end

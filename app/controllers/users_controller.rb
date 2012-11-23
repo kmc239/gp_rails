@@ -6,7 +6,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: { :users => @users } }
+      # note: if in the future we want to support a get users call 
+      # we will need to add :user => @users
+      format.json { render json: @users } 
     end
   end
 

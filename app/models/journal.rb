@@ -20,5 +20,7 @@ class Journal < ActiveRecord::Base
   validates :gender, :length => { :maximum => 10 }
   validates :user_id, :presence => true
   
-  self.include_root_in_json = true
+  # Do not include root in json for each individual journal
+  # We will wrap all journals in a journal array in the controller
+  self.include_root_in_json = false
 end
