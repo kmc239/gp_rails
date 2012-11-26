@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: entries
 #
 #  id          :integer          not null, primary key
 #  description :text
@@ -11,16 +11,16 @@
 #  updated_at  :datetime         not null
 #
 
-class Post < ActiveRecord::Base
+class Entry < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
   attr_accessible :description, :journal_id, :picture
   
-  belongs_to :post
+  belongs_to :entry
   
   validates :description, :length => { :maximum => 140 }
   validates :journal_id, :presence => true
   
-  # Do not include root in json for each individual post
-  # We will wrap all posts in a post array in the controller
+  # Do not include root in json for each individual entry
+  # We will wrap all entries in a entry array in the controller
   self.include_root_in_json = false
 end

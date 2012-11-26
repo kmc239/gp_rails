@@ -1,0 +1,27 @@
+<h1>Listing entries</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Picture</th>
+    <th>Journal</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.description %></td>
+    <td><%= entry.picture %></td>
+    <td><%= entry.journal_id %></td>
+    <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entry', new_entry_path %>

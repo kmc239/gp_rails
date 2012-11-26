@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: entries
 #
 #  id          :integer          not null, primary key
 #  description :text
@@ -13,7 +13,7 @@
 
 require 'test_helper'
 
-class PostTest < ActiveSupport::TestCase
+class EntryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class PostsControllerTest < ActionController::TestCase
+class EntriesControllerTest < ActionController::TestCase
   setup do
-    @post = posts(:one)
+    @entry = entries(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:posts)
+    assert_not_nil assigns(:entries)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create post" do
-    assert_difference('Post.count') do
-      post :create, post: { description: @post.description, journal_id: @post.journal_id, picture: @post.picture, string: @post.string }
+  test "should create entry" do
+    assert_difference('Entry.count') do
+      entry :create, entry: { description: @entry.description, journal_id: @entry.journal_id, picture: @entry.picture, string: @entry.string }
     end
 
-    assert_redirected_to post_path(assigns(:post))
+    assert_redirected_to entry_path(assigns(:entry))
   end
 
-  test "should show post" do
-    get :show, id: @post
+  test "should show entry" do
+    get :show, id: @entry
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @post
+    get :edit, id: @entry
     assert_response :success
   end
 
-  test "should update post" do
-    put :update, id: @post, post: { description: @post.description, journal_id: @post.journal_id, picture: @post.picture, string: @post.string }
-    assert_redirected_to post_path(assigns(:post))
+  test "should update entry" do
+    put :update, id: @entry, entry: { description: @entry.description, journal_id: @entry.journal_id, picture: @entry.picture, string: @entry.string }
+    assert_redirected_to entry_path(assigns(:entry))
   end
 
-  test "should destroy post" do
-    assert_difference('Post.count', -1) do
-      delete :destroy, id: @post
+  test "should destroy entry" do
+    assert_difference('Entry.count', -1) do
+      delete :destroy, id: @entry
     end
 
-    assert_redirected_to posts_path
+    assert_redirected_to entries_path
   end
 end

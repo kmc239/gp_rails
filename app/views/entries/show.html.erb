@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @entry.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= image_tag(@entry.picture_url, :width => 600) if @entry.picture.present? %>
+  
+</p>
+
+<p>
+  <b>Journal:</b>
+  <%= @entry.journal_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

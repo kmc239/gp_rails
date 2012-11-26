@@ -18,7 +18,7 @@ class JournalsControllerTest < ActionController::TestCase
 
   test "should create journal" do
     assert_difference('Journal.count') do
-      post :create, journal: { birthdate: @journal.birthdate, gender: @journal.gender, name: @journal.name, user_id: @journal.user_id }
+      entry :create, journal: { birthdate: @journal.birthdate, gender: @journal.gender, name: @journal.name, user_id: @journal.user_id }
     end
 
     assert_redirected_to journal_path(assigns(:journal))

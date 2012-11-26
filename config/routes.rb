@@ -1,5 +1,5 @@
 Gp::Application.routes.draw do
-  resources :posts
+  resources :entries
   resources :journals
   resources :users
   
@@ -8,7 +8,7 @@ Gp::Application.routes.draw do
   end
           
   resources :journals do
-      resources :posts
+      resources :entries
   end
     
   root :to => redirect('/users')
