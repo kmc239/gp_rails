@@ -12,7 +12,7 @@ class JournalsController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: { :journal => @journals } }
+      format.json { render json: { :journals => { :journal => @journals } } }
     end
   end
 
