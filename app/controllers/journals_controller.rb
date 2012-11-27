@@ -1,4 +1,7 @@
 class JournalsController < ApplicationController
+  
+  # http_basic_authenticate_with name: "hi", password: "secret"  
+    
   # GET /journals
   # GET /journals.json
   def index
@@ -19,6 +22,7 @@ class JournalsController < ApplicationController
   # GET /journals/1
   # GET /journals/1.json
   def show
+    
     @journal = Journal.find(params[:id])
 
     respond_to do |format|

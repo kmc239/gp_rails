@@ -17,6 +17,10 @@
 	        <li class="active"><a href="/users">Users</a></li>
 	        <li class="active"><a href="/journals">Journals</a></li>
 	        <li class="active"><a href="/entries">Entries</a></li>
+			
+			<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+			<% end %>
 	      </ul>
 	    </div>
 	  </div>

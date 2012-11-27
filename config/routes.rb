@@ -1,7 +1,12 @@
 Gp::Application.routes.draw do
+  
+  # Custom login route for authentication
+  get "login" => "sessions#new", :as => "login"
+
   resources :entries
   resources :journals
   resources :users
+  resources :sessions
   
   resources :users do
     resources :journals

@@ -18,4 +18,20 @@ class User < ActiveRecord::Base
   # We know users will only be fetched individually, 
   # so this will not affect any getUsers calls
   self.include_root_in_json = true
+  
+  def self.authenticate(email, password)
+  
+    user = User.find_by_email(email)
+    
+    if BCrypt::Password.create(password) == 'password'
+      puts "passwords are equal"
+    end
+    
+    if user && user.authenticate(password)
+      user
+    else
+      nil
+    end
+  end
+    
 end
