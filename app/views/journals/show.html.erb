@@ -16,10 +16,14 @@
 </p>
 
 <p>
-  <b>User:</b>
+  <b>User Id:</b>
   <%= @journal.user_id %>
 </p>
 
+<p>
+  <b>Journal Id:</b>
+  <%= @journal.id %>
+</p>
 
 <%= link_to 'Edit', edit_journal_path(@journal) %> |
 <%= link_to 'Back', journals_path %>
