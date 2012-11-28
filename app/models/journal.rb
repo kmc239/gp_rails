@@ -17,8 +17,13 @@ class Journal < ActiveRecord::Base
   belongs_to :user
   has_many :entries
   
-  validates :gender, :length => { :maximum => 10 }
-  validates :user_id, :presence => true
+  # Server-side validation. Validation also occurs client-side.
+  validates_presence_of :user
+  
+  validates :birthdate, :presence => true
+  validates :gender, :presence => true, :length => { :maximum => 10 }
+  validates :name, :presence => true
+  # validates :user_id, :presence => true
   
   # Do not include root in json for each individual journal
   # We will wrap all journals in a journal array in the controller

@@ -1,6 +1,4 @@
 class JournalsController < ApplicationController
-  
-  # http_basic_authenticate_with name: "hi", password: "secret"  
     
   # GET /journals
   # GET /journals.json

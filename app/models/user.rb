@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :journals
   
+  # Server-side validation. Validation also occurs client-side.
+  validates :email, :presence => true, :uniqueness => true
+  validates :name, :presence => true
+  validates :password, :length => { :minimum => 6 }
+
   # Include root in json for each individual user.
   # We know users will only be fetched individually, 
   # so this will not affect any getUsers calls

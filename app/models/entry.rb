@@ -15,7 +15,10 @@ class Entry < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
   attr_accessible :description, :journal_id, :picture
   
-  belongs_to :entry
+  belongs_to :journal
+  
+  # Server-side validation. Validation also occurs client-side.
+  validates_presence_of :journal
   
   validates :description, :length => { :maximum => 140 }
   validates :journal_id, :presence => true
