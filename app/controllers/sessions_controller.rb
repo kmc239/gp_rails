@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  
+  skip_before_filter :http_auth, :only => :create
+  
   def new
   end
   

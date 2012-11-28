@@ -23,10 +23,6 @@ class User < ActiveRecord::Base
   
     user = User.find_by_email(email)
     
-    if BCrypt::Password.create(password) == 'password'
-      puts "passwords are equal"
-    end
-    
     if user && user.authenticate(password)
       user
     else
