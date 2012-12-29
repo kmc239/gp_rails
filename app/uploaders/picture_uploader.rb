@@ -39,8 +39,13 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Store an 80x80 thumbnail:
-  version :thumb do
+  version :thumb80 do
     process :resize_to_fit => [80, 80]
+  end
+  
+  # Store a 300x300 thumbnail:
+  version :thumb300 do
+    process :resize_to_fit => [300, 300]
   end
   
   # Add a white list of extensions which are allowed to be uploaded.
