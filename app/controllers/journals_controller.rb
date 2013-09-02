@@ -67,7 +67,7 @@ class JournalsController < ApplicationController
     @journal = Journal.find(params[:id])
 
     respond_to do |format|
-      if @journal.update_attributes(params[:journal])
+      if @journal.update_attributes(:journal => params[:journal])
         format.html { redirect_to @journal, notice: 'Journal was successfully updated.' }
         format.json { head :no_content }
       else

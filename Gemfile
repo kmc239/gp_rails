@@ -4,7 +4,7 @@ gem 'rails', '3.2.11'
 gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
 gem 'bcrypt-ruby', '3.0.1'
-gem 'rmagick', '2.13.1', :require => 'RMagick'
+gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

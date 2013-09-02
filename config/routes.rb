@@ -1,7 +1,19 @@
+require 'api_constraints'
+
 Gp::Application.routes.draw do
   
   # Custom login route for authentication
   get "login" => "sessions#new", :as => "login"
+
+  # API versioning
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1) do
+      resources :entries
+      resources :journals
+      resources :users
+      resources :sessions
+    end
+  end
 
   resources :entries
   resources :journals
@@ -16,7 +28,7 @@ Gp::Application.routes.draw do
       resources :entries
   end
     
-  root :to => redirect('/users')
+  root to: 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

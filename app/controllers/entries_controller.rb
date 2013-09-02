@@ -64,7 +64,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
 
     respond_to do |format|
-      if @entry.update_attributes(params[:entry])
+      if @entry.update_attributes(:entry => params[:entry])
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
         format.json { head :no_content }
       else
