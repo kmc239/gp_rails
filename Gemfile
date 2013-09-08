@@ -5,6 +5,7 @@ gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'rmagick'
+gem 'thin'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -25,5 +26,5 @@ end
 gem 'jquery-rails', '2.0.2'
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg', '0.16.0'
 end

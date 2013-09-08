@@ -3,6 +3,7 @@ module Api
 		class JournalsController < ApplicationController
 			class Journal < ::Journal
 				def as_json(options = {})
+					super
 				end
 			end
 

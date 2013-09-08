@@ -3,6 +3,7 @@ module Api
 		class EntriesController < ApplicationController
 			class Entry < ::Entry
 				def as_json(options = {})
+					super
 				end
 			end
 

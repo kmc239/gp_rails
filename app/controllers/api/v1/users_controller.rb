@@ -3,6 +3,7 @@ module Api
 		class UsersController < ApplicationController
 			class User < ::User
 				def as_json(options = {})
+					super
 				end
 			end
 

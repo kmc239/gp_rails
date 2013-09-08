@@ -7,7 +7,7 @@ Gp::Application.routes.draw do
 
   # API versioning
   namespace :api, defaults: {format: 'json'} do
-    scope module: :v1, constraints: ApiConstraints.new(version: 1) do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :entries
       resources :journals
       resources :users
